@@ -7,8 +7,13 @@ let menuText = document.querySelector("#menu-text");
 function handleSubmit(event) {
   event.preventDefault();
   let menu = JSON.parse(input.value);
-  menuText.textContent =
-    "We have " + menu.length + " items today\n" + menu.join("\n");
+  count.textContent =
+    "We have " + menu.length + menu.length " items today.";
+    menuText.textContent = "";
+    for (let i = 0; i <menu.length; i++){
+        menuText.textContent = menuText.textContent + menu[i] + " - $" + menu[i].price + "\n";
+        
+    }
 }
 
 form.addEventListener("submit", handleSubmit);
